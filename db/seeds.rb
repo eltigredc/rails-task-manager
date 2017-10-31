@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+
+puts "Deleting all tasks"
+Task.destroy_all
+
+
+puts "Creating 25 tasks"
+25.times do
+  task = Task.create(name: Faker::Hacker.ingverb, description:
+Faker::Hacker.say_something_smart)
+  puts "Created #{task.name}"
+end
+
+puts "Bye!"
